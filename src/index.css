@@ -1,0 +1,1273 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  font-family: "Manrope", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --ivory: #f7f2ed;
+  --cream: #fffaf7;
+  --blush: #e8d9d1;
+  --rose: #b87870;
+  --espresso: #281d1b;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--ivory);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--ivory);
+  color: var(--espresso);
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #b87870;
+  color: white;
+}
+
+.font-display {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+/* Smooth anchor positioning below fixed navbar */
+section[id] {
+  scroll-margin-top: 82px;
+}
+
+/* Brand ticker animation */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.brand-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+.brand-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Slightly cleaner scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f7f2ed;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c9aaa1;
+  border-radius: 100px;
+  border: 2px solid #f7f2ed;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b87870;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .brand-marquee {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* =========================================
+   ABOUT SECTION
+========================================= */
+
+.about-section {
+  position: relative;
+  width: 100%;
+  background: #f8ece8;
+  padding: 120px 6vw;
+  overflow: hidden;
+}
+
+.about-container {
+  max-width: 1250px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.85fr 1.35fr;
+  align-items: center;
+  gap: 100px;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.about-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image-wrap {
+  position: relative;
+  width: min(390px, 100%);
+  aspect-ratio: 1 / 1;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  object-fit: contain;
+
+  /* subtle luxury effect */
+  filter: saturate(0.92);
+}
+
+
+/* Small decorative sparkle */
+
+.about-sparkle {
+  position: absolute;
+
+  top: 10%;
+  right: 1%;
+
+  font-size: 25px;
+  color: #d58480;
+
+  animation: sparkleFloat 4s ease-in-out infinite;
+}
+
+@keyframes sparkleFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-6px) rotate(8deg);
+  }
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.about-content {
+  max-width: 720px;
+}
+
+
+/* Eyebrow */
+
+.about-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 25px;
+}
+
+.about-eyebrow span {
+  width: 40px;
+  height: 1px;
+  background: #d99590;
+}
+
+.about-eyebrow p {
+  margin: 0;
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+
+  color: #b97874;
+}
+
+
+/* Heading */
+
+.about-content h2 {
+  margin: 0 0 35px;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: clamp(48px, 5vw, 78px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+
+  color: #292322;
+}
+
+.about-content h2 em {
+  color: #cf817c;
+  font-weight: 400;
+}
+
+
+/* Paragraphs */
+
+.about-text {
+  max-width: 680px;
+}
+
+.about-text p {
+  margin: 0 0 23px;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 15px;
+  line-height: 1.9;
+
+  color: #725f5b;
+}
+
+
+/* =========================================
+   SIGNATURE
+========================================= */
+
+.about-signature {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  margin-top: 35px;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: #aa7772;
+}
+
+.signature-line {
+  width: 70px;
+  height: 1px;
+
+  background: #d89a95;
+}
+
+
+/* =========================================
+   DECORATIVE BACKGROUND
+========================================= */
+
+.about-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background: rgba(224, 166, 160, 0.08);
+
+  left: -220px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  pointer-events: none;
+}
+
+.about-section::after {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(203, 132, 126, 0.12);
+
+  right: -70px;
+  top: 15%;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .about-section {
+    padding: 90px 6vw;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 55px;
+
+    text-align: center;
+  }
+
+  .about-visual {
+    order: 1;
+  }
+
+  .about-content {
+    order: 2;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .about-eyebrow {
+    justify-content: center;
+  }
+
+  .about-text {
+    margin: 0 auto;
+  }
+
+  .about-signature {
+    justify-content: center;
+  }
+
+  .about-image-wrap {
+    width: min(350px, 80vw);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .about-section {
+    padding: 75px 22px;
+  }
+
+  .about-container {
+    gap: 38px;
+  }
+
+  .about-image-wrap {
+    width: min(300px, 82vw);
+  }
+
+  .about-sparkle {
+    font-size: 19px;
+    right: 2%;
+  }
+
+  .about-eyebrow {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .about-eyebrow span {
+    width: 25px;
+  }
+
+  .about-eyebrow p {
+    font-size: 8px;
+    letter-spacing: 0.2em;
+  }
+
+  .about-content h2 {
+    font-size: clamp(42px, 13vw, 58px);
+    line-height: 0.95;
+
+    margin-bottom: 27px;
+  }
+
+  .about-text p {
+    font-size: 14px;
+    line-height: 1.8;
+
+    margin-bottom: 19px;
+  }
+
+  .about-signature {
+    margin-top: 28px;
+    font-size: 8px;
+  }
+
+  .signature-line {
+    width: 45px;
+  }
+}
+
+/* =========================================
+   DISCOVER SECTION — COMPACT VERSION
+========================================= */
+
+.discover-section {
+  position: relative;
+  overflow: hidden;
+  padding: 85px 0 90px;
+  background: #ead8d2;
+  color: #292321;
+}
+
+.discover-container {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.discover-heading {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 48px;
+}
+
+.discover-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  margin-bottom: 20px;
+}
+
+.discover-eyebrow span {
+  width: 34px;
+  height: 1px;
+  background: rgba(137, 96, 90, 0.3);
+}
+
+.discover-eyebrow p {
+  margin: 0;
+  font-size: 9px;
+  letter-spacing: 0.26em;
+  color: #a97870;
+}
+
+.discover-heading h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 5vw, 64px);
+  line-height: 0.98;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+}
+
+.discover-heading h2 em {
+  color: #ca7e7a;
+  font-style: italic;
+}
+
+.discover-intro {
+  max-width: 520px;
+  margin: 20px auto 0;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #796764;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.discover-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(111, 78, 72, 0.16);
+  border-bottom: 1px solid rgba(111, 78, 72, 0.16);
+}
+
+.discover-card {
+  position: relative;
+
+  min-height: 300px;
+
+  padding: 24px 22px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: rgba(246, 235, 230, 0.3);
+
+  border-right: 1px solid rgba(111, 78, 72, 0.16);
+
+  transition:
+    background 0.35s ease,
+    transform 0.35s ease;
+}
+
+.discover-card:last-child {
+  border-right: none;
+}
+
+.discover-card:hover {
+  background: rgba(250, 242, 238, 0.65);
+}
+
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.discover-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.discover-number {
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  color: #b9867f;
+}
+
+.discover-symbol {
+  font-family: Georgia, serif;
+  font-size: 17px;
+  color: #cf817c;
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.discover-card-content {
+  max-width: 250px;
+}
+
+.discover-label {
+  margin: 0 0 13px;
+
+  font-size: 8px;
+  letter-spacing: 0.2em;
+
+  color: #b77b74;
+}
+
+.discover-card h3 {
+  margin: 0 0 13px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 27px;
+  font-weight: 400;
+
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.discover-description {
+  margin: 0;
+
+  font-size: 11px;
+  line-height: 1.7;
+
+  color: #806d68;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.discover-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 15px;
+
+  border-top: 1px solid rgba(111, 78, 72, 0.13);
+}
+
+.discover-card-footer span:first-child {
+  font-size: 7px;
+  letter-spacing: 0.16em;
+  color: #a9827d;
+}
+
+.discover-arrow {
+  font-size: 16px;
+  color: #c77e78;
+
+  transition: transform 0.3s ease;
+}
+
+.discover-card:hover .discover-arrow {
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================================
+   BOTTOM LINE
+========================================= */
+
+.discover-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  margin-top: 30px;
+}
+
+.discover-bottom-line {
+  width: 45px;
+  height: 1px;
+  background: rgba(111, 78, 72, 0.16);
+}
+
+.discover-bottom p {
+  margin: 0;
+
+  font-size: 8px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+
+  color: #a27c76;
+}
+
+.discover-bottom strong {
+  font-weight: 500;
+  color: #c67d77;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .discover-section {
+    padding: 70px 0 75px;
+  }
+
+  .discover-container {
+    width: calc(100% - 32px);
+  }
+
+  .discover-heading {
+    margin-bottom: 35px;
+  }
+
+  .discover-heading h2 {
+    font-size: 43px;
+  }
+
+  .discover-intro {
+    font-size: 12px;
+    margin-top: 17px;
+  }
+
+  .discover-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .discover-card,
+  .discover-card--large,
+  .discover-card--wide {
+    min-height: 245px;
+    padding: 22px;
+    border-right: none;
+    border-bottom: 1px solid rgba(111, 78, 72, 0.16);
+  }
+
+  .discover-card:last-child {
+    border-bottom: none;
+  }
+
+  .discover-card h3 {
+    font-size: 29px;
+  }
+
+  .discover-description {
+    font-size: 11px;
+    max-width: 300px;
+  }
+
+  .discover-bottom {
+    margin-top: 25px;
+  }
+
+  .discover-bottom p {
+    font-size: 7px;
+    text-align: center;
+  }
+
+  .discover-bottom-line {
+    width: 25px;
+  }
+}
+
+/* =========================================
+   CURATED FOR YOU
+   Minimal Editorial Section
+========================================= */
+
+.curated-section {
+  position: relative;
+  width: 100%;
+  min-height: 590px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(255, 255, 255, 0.7) 0%,
+      rgba(248, 236, 231, 0.25) 42%,
+      transparent 72%
+    ),
+    #f8f1ed;
+
+  color: #292322;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.curated-content {
+  position: relative;
+  z-index: 5;
+
+  width: min(760px, calc(100% - 40px));
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.curated-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  margin-bottom: 23px;
+}
+
+.curated-eyebrow span {
+  width: 38px;
+  height: 1px;
+
+  background: rgba(197, 119, 112, 0.42);
+}
+
+.curated-eyebrow p {
+  margin: 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 8px;
+  font-weight: 500;
+
+  letter-spacing: 0.32em;
+
+  color: #b77c75;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.curated-heading {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: clamp(52px, 6vw, 78px);
+
+  font-weight: 400;
+
+  line-height: 0.91;
+
+  letter-spacing: -0.055em;
+
+  color: #2c2523;
+}
+
+.curated-heading em {
+  font-style: italic;
+  font-weight: 400;
+
+  color: #cf817c;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.curated-description {
+  max-width: 620px;
+
+  margin: 30px auto 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  color: #695955;
+}
+
+
+/* =========================================
+   SMALL NOTE
+========================================= */
+
+.curated-note {
+  max-width: 570px;
+
+  margin: 18px auto 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 11px;
+
+  line-height: 1.7;
+
+  color: #9a7771;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.curated-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  margin-top: 28px;
+
+  min-width: 190px;
+
+  padding: 14px 24px;
+
+  border-radius: 999px;
+
+  background: #df918b;
+
+  color: #302422;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.curated-button span {
+  font-size: 13px;
+
+  letter-spacing: 0;
+
+  transition: transform 0.3s ease;
+}
+
+.curated-button:hover {
+  background: #d98580;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(180, 105, 99, 0.16);
+}
+
+.curated-button:hover span {
+  transform: translateX(4px);
+}
+
+
+/* =========================================
+   BOTTOM DECORATION
+========================================= */
+
+.curated-footer {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+.curated-footer span {
+  width: 42px;
+  height: 1px;
+
+  background: rgba(191, 119, 112, 0.35);
+}
+
+.curated-footer b {
+  font-size: 13px;
+
+  font-weight: 400;
+
+  color: #d48781;
+}
+
+.curated-tagline {
+  margin: 9px 0 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 7px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.34em;
+
+  color: #bc8a84;
+}
+
+
+/* =========================================
+   DECORATIVE ORBITS
+========================================= */
+
+.curated-orbit {
+  position: absolute;
+
+  width: 430px;
+  height: 430px;
+
+  border: 1px solid rgba(207, 129, 124, 0.24);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.curated-orbit-left {
+  left: -300px;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+.curated-orbit-right {
+  right: -300px;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+
+/* =========================================
+   LARGE SOFT CIRCLES
+========================================= */
+
+.curated-circle {
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  background: rgba(225, 171, 165, 0.13);
+
+  pointer-events: none;
+}
+
+.curated-circle-left {
+  left: -105px;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+.curated-circle-right {
+  right: -105px;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+
+/* =========================================
+   SPARKLES
+========================================= */
+
+.curated-sparkle {
+  position: absolute;
+
+  font-family: Georgia, serif;
+
+  font-size: 20px;
+
+  color: #d48781;
+}
+
+.curated-orbit-left .curated-sparkle {
+  right: -5px;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+.curated-orbit-right .curated-sparkle {
+  left: -5px;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+
+/* =========================================
+   SUBTLE ANIMATION
+========================================= */
+
+@keyframes curatedSparkle {
+
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: translateY(-50%) scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.12);
+  }
+
+}
+
+.curated-sparkle {
+  animation: curatedSparkle 4s ease-in-out infinite;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .curated-section {
+    min-height: 560px;
+  }
+
+  .curated-heading {
+    font-size: clamp(48px, 8vw, 68px);
+  }
+
+  .curated-description {
+    max-width: 570px;
+  }
+
+  .curated-orbit {
+    width: 350px;
+    height: 350px;
+  }
+
+  .curated-orbit-left {
+    left: -260px;
+  }
+
+  .curated-orbit-right {
+    right: -260px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .curated-section {
+    min-height: 560px;
+
+    padding: 75px 20px;
+  }
+
+  .curated-content {
+    width: 100%;
+  }
+
+  .curated-eyebrow {
+    gap: 9px;
+
+    margin-bottom: 20px;
+  }
+
+  .curated-eyebrow span {
+    width: 25px;
+  }
+
+  .curated-eyebrow p {
+    font-size: 7px;
+    letter-spacing: 0.23em;
+  }
+
+  .curated-heading {
+    font-size: clamp(45px, 13vw, 58px);
+
+    line-height: 0.94;
+  }
+
+  .curated-description {
+    margin-top: 24px;
+
+    max-width: 330px;
+
+    font-size: 12px;
+
+    line-height: 1.75;
+  }
+
+  .curated-note {
+    max-width: 320px;
+
+    margin-top: 15px;
+
+    font-size: 10px;
+
+    line-height: 1.65;
+  }
+
+  .curated-button {
+    margin-top: 25px;
+
+    min-width: 175px;
+
+    padding: 13px 20px;
+
+    font-size: 7px;
+  }
+
+  .curated-footer {
+    margin-top: 27px;
+  }
+
+  .curated-footer span {
+    width: 30px;
+  }
+
+  .curated-tagline {
+    font-size: 6px;
+
+    letter-spacing: 0.25em;
+  }
+
+
+  /* Smaller decorative elements */
+
+  .curated-orbit {
+    width: 270px;
+    height: 270px;
+  }
+
+  .curated-orbit-left {
+    left: -225px;
+  }
+
+  .curated-orbit-right {
+    right: -225px;
+  }
+
+  .curated-circle {
+    width: 155px;
+    height: 155px;
+  }
+
+  .curated-circle-left {
+    left: -90px;
+  }
+
+  .curated-circle-right {
+    right: -90px;
+  }
+
+  .curated-sparkle {
+    font-size: 16px;
+  }
+
+}
