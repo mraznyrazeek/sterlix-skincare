@@ -1,37 +1,10 @@
-# Skincare Coming Soon — React Starter
+# Sterlix Skincare
 
-A premium, feminine, Korean-beauty-inspired coming-soon landing page built with React + Vite.
-
-## Run locally
-
-```bash
-npm install
-npm run dev
-```
-
-Then open the local URL shown by Vite.
-
-## Project structure
-
-```text
-skincare-coming-soon/
-├── index.html
-├── package.json
-├── README.md
-└── src/
-    ├── App.jsx
-    ├── data.js
-    ├── main.jsx
-    └── styles.css
-```
 
 ## Where we will customise it next
 
-- Business name and logo
-- Instagram / WhatsApp / email
 - Real product photos
 - Confirmed brands and product catalogue
-- Newsletter backend
 - Product/category pages
 - Shopping cart
 - Product details
