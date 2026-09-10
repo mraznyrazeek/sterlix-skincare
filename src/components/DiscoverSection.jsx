@@ -204,7 +204,7 @@ export default function DiscoverSection() {
                     </span>
 
                     <span className="text-[12px] text-[#d1847f] transition-transform duration-300 group-hover:translate-x-1">
-                      ↗
+                      →
                     </span>
                   </div>
 
@@ -314,7 +314,7 @@ export default function DiscoverSection() {
                   </span>
 
                   <span className="text-[12px] text-[#d1847f] transition-transform duration-300 group-hover:translate-x-1">
-                    ↗
+                    →
                   </span>
                 </div>
 

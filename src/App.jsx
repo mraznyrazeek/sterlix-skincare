@@ -283,7 +283,7 @@ function App() {
 
                       <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#c8ddd0] bg-[#f0f8f2] text-[#278b55] transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-[#278b55] group-hover:text-white">
                         <span className="text-sm transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                          ↗
+                          →
                         </span>
                       </span>
                     </a>
@@ -500,7 +500,7 @@ function App() {
                     About
 
                     <span className="opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100">
-                      ↗
+                      →
                     </span>
                   </a>
 
@@ -511,7 +511,7 @@ function App() {
                     Shop Categories
 
                     <span className="opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100">
-                      ↗
+                      →
                     </span>
                   </a>
 
@@ -522,7 +522,7 @@ function App() {
                     Contact
 
                     <span className="opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100">
-                      ↗
+                      →
                     </span>
                   </a>
                 </div>
