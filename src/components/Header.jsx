@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import strlixLogo from "../assets/strlix-logo.png";
+import sterlixLogo from "../assets/sterlix-logo.png";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -66,7 +66,7 @@ export default function Header() {
 
           {/* Logo */}
           <img
-            src={strlixLogo}
+            src={sterlixLogo}
             alt="STRLIX Skincare"
             className="
               relative
