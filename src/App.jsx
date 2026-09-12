@@ -585,26 +585,7 @@ function App() {
 
               {/* Developer Credit */}
               <p className="flex items-center gap-2 text-[11px] tracking-[0.06em] text-[#9a7771]">
-                <span>Designed & developed by</span>
-
-                <a
-                  href="www.linkedin.com/in/raznyrazeek"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-1.5 font-medium text-[#765f5a] transition-colors duration-300 hover:text-[#d1847f]"
-                  aria-label="Razny Razeek on LinkedIn"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path d="M6.5 8.5H3V21h3.5V8.5ZM4.75 3A2.1 2.1 0 1 0 4.75 7.2 2.1 2.1 0 0 0 4.75 3ZM21 13.8c0-3.76-2-5.52-4.67-5.52-2.15 0-3.11 1.18-3.65 2v-1.78H9.18V21h3.5v-6.18c0-1.63.31-3.2 2.32-3.2 1.98 0 2 1.86 2 3.3V21H21v-7.2Z" />
-                  </svg>
-
-                  <span>Razny Razeek</span>
-                </a>
+                <span>Designed & developed by Razny Razeek</span>
               </p>
 
               <div className="flex items-center gap-4">
