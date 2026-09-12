@@ -4,7 +4,7 @@ import sterlixLogo from "../assets/sterlix-logo.png";
 const navItems = [
   { label: "About", href: "#about" },
   { label: "Discover", href: "#discover" },
-  { label: "Brands", href: "#brands" },
+  { label: "Categories", href: "#categories" },
   { label: "Coming Soon", href: "#coming-soon" },
 ];
 
